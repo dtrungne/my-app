@@ -49,7 +49,49 @@ const App = () => {
             </option>
           ))}
         </select>
-        <span>&rarr;</span>
+        <span className="swap-icon" onClick={handleConvert}>
+          
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon flat-line"
+            width="24"
+            height="24"
+          >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <polyline
+                id="primary"
+                points="20 10 4 10 7 7"
+                style={{
+                  fill: "none",
+                  stroke: "#000000",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  strokeWidth: "2",
+                }}
+              ></polyline>
+              <polyline
+                id="primary-2"
+                data-name="primary"
+                points="4 14 20 14 17 17"
+                style={{
+                  fill: "none",
+                  stroke: "#000000",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                  strokeWidth: "2",
+                }}
+              ></polyline>
+            </g>
+          </svg>
+        </span>
         <select
           value={currency2}
           onChange={(e) => setCurrency2(e.target.value)}
@@ -62,14 +104,60 @@ const App = () => {
           ))}
         </select>
       </div>
-      <button onClick={handleConvert} className="convert-button">
-        Đổi tiền
-      </button>
-      {result && (
-        <div className="result">
-          Kết quả: <strong>{result}</strong> {currency2}
+      <div className="result">
+        {result && (
+          <p>
+            Kết quả: {result} {currency2}
+          </p>
+        )}
+      </div>
+      <footer class="footer">
+        <div class="footer-left">
+          <h3>
+            ChuyenDoi<span>TienTe</span>
+          </h3>
+          <p class="footer-links">
+            <a href="#" class="link-1">
+              Home
+            </a>
+          </p>
+          <p class="footer-company-name">Copyright © 2024</p>
         </div>
-      )}
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>
+              <span>Vietnam</span> Tp. Ho Chi Minh
+            </p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+84 9813699**</p>
+          </div>
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>
+              <a href="mailto:support@company.com">nductrung.021@gmail.com</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-icons">
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
